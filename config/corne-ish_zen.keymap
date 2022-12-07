@@ -27,7 +27,7 @@
                     = <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
-            sleft: sleft {
+            slf: slf {
                 label = "ZM_slf";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -35,7 +35,7 @@
                     = <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
-            sright: sright {
+            srt: srt {
                 label = "ZM_srt";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -43,7 +43,7 @@
                     = <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
-            sgrab: sgrab {
+            sgrb: sgrb {
                 label = "ZM_sgrb";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
