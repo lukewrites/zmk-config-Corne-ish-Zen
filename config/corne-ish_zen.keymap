@@ -12,7 +12,7 @@
 / {
         macros {
             pone: pone {
-                label = "pone";
+                label = "ZM_pone";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -20,7 +20,7 @@
                     ;
             };
             ptwo: ptwo {
-                label = "ptwo";
+                label = "ZM_ptwo";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -28,7 +28,7 @@
                     ;
             };
             sleft: sleft {
-                label = "slf";
+                label = "ZM_slf";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -36,7 +36,7 @@
                     ;
             };
             sright: sright {
-                label = "srt";
+                label = "ZM_srt";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -44,7 +44,7 @@
                     ;
             };
             sgrab: sgrab {
-                label = "sgrb";
+                label = "ZM_sgrb";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -52,7 +52,7 @@
                     ;
             };
             alf: alf {
-                label = "alf";
+                label = "ZM_alf";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
@@ -61,6 +61,16 @@
             };
         };
  };
+ 
+ / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+};
 
 / {
         keymap {
@@ -98,29 +108,29 @@
                 raise_layer {
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
-// |  `   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &   |  *  |  (  |  )    | BKSP |
-// | ESC  |     |     |     |     |     |   |     |  LFT | DWN |  UP | RGT  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +   |  {  |  }  | "|"   |  ~   |
+// |  `   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &   |  *  |  (  |  )  | BKSP |
+// | ESC  |     |     |     |     |     |   |     |  LFT | DWN |  UP | RGT |      |
+// | SHFT |     |     |     |     |     |   |     |      |  {  |  }  | "|" | CTRL |
 //                    | GUI |     | SPC |   | ENT |      | ALT |
                         bindings = <
-   &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp ESC   &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBKT        &kp RBKT &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR  &kp BSPC
+   &kp ESC   &trans   &trans &trans   &trans   &trans      &trans    &kp LEFT &kp DOWN        &kp UP   &kp RIGHT &trans
+   &kp LSHFT &trans   &trans &trans   &trans   &trans      &trans    &trans   &kp LBKT        &kp RBKT &kp PIPE  &kp LCTRL
+                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans   &kp RALT
                         >;
                 };
                 macros_layer {
                         label = "MACROS";
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |  6  |  7  |  8  |  9  |  0  | DEL |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | pone |   | ptwo |     |   |   |     | DEL |
+// | ESC   |     |     |     | alf |      |   |      | slf |   |   | srt |     |
+// | SHFT  |     |     |     |     | sgrb |   |      |      |   |   |     |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &pone       &ptwo  &trans &trans &trans &trans    &kp DEL
+   &kp ESC    &bt BT_SEL 5 &trans       &trans       &alf         &trans      &trans &slf   &trans &trans &kp RIGHT &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &sgrb       &trans &trans &trans &trans &trans    &trans
+                          	       &kp LGUI     &trans       &kp SPACE   &kp RET  &trans   &kp RALT
                         >;
                 };
 
