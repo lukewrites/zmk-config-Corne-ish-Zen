@@ -14,58 +14,6 @@
 #define SYMBOL 2
 #define MACROS 3
 
-/ {
-        macros {
-            pone: pone {
-                label = "ZM_pone";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings =
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-            ptwo: ptwo {
-                label = "ZM_ptwo";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = 
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-            slf: slf {
-                label = "ZM_slf";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = 
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-            srt: srt {
-                label = "ZM_srt";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings =
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-            sgrb: sgrb {
-                label = "ZM_sgrb";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings =
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-            alf: alf {
-                label = "ZM_alf";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings =
-                    <&macro_tap &kp Z &kp M &kp K>
-                    ;
-            };
-        };
- };
 
 / {
         keymap {
@@ -122,9 +70,9 @@
 // | SHFT  |     |     |     |     | sgrb |   |      |      |   |   |     |     |
 //                    | GUI |     | SPC |   | ENT | MACROS | ALT |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &pone       &ptwo  &trans &trans &trans &trans    &kp DEL
-   &kp ESC    &bt BT_SEL 5 &trans       &trans       &alf         &trans      &trans &slf   &trans &trans &kp RIGHT &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &sgrb       &trans &trans &trans &trans &trans    &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans      &trans  &trans &trans &trans &trans    &kp DEL
+   &kp ESC    &bt BT_SEL 5 &trans       &trans       &alf         &trans      &trans &trans   &trans &trans &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans &trans    &trans
                           	       &kp LGUI     &trans       &kp SPACE   &kp RET  &trans   &kp RALT
                         >;
                 };
