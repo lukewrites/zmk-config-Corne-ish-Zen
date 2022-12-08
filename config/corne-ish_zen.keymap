@@ -20,48 +20,48 @@
                 label = "ZM_pone";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings =
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
             ptwo: ptwo {
                 label = "ZM_ptwo";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings = 
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
             slf: slf {
                 label = "ZM_slf";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings = 
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
             srt: srt {
                 label = "ZM_srt";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings =
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
             sgrb: sgrb {
                 label = "ZM_sgrb";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings =
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
             alf: alf {
                 label = "ZM_alf";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &kp Z &kp M &kp K>
+                bindings =
+                    <&macro_tap &kp Z &kp M &kp K>
                     ;
             };
         };
